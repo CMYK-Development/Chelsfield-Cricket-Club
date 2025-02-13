@@ -1,0 +1,200 @@
+*{
+  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* overflow-x: hidden; */
+  font-family: "Poppins", sans-serif;
+}
+.bg{
+  background-image: url("./assets//Hero_Image1.jpg");
+  
+}
+.bg2{
+  background-image: url("./assets/Our_Team.jpg");
+  height: 60vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg3{
+  background-image: url("./assets/hireHall/hallroom.jpg");
+  height: 80vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg4{
+  background-image: url("./assets/Equality.jpg");
+  height: 60vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg5{
+  background-image: url("./assets/club history.jpg");
+  height: 60vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.diagonal-container {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Adjust height as per your requirement */
+  overflow: hidden;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%; /* Adjust this width to control how much of the container is covered */
+  height: 100%;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  z-index: 1; /* Ensures it stays on top of the image */
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire container without distortion */
+  z-index: 0; /* Keeps the image behind the diagonal background */
+}
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  background: #fff;
+}
+/* HTML: <div class="loader"></div> */
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid #514b82;
+  animation:
+    l20-1 0.8s infinite linear alternate,
+    l20-2 1.6s infinite linear;
+}
+@keyframes l20-1{
+   0%    {clip-path: polygon(50% 50%,0       0,  50%   0%,  50%    0%, 50%    0%, 50%    0%, 50%    0% )}
+   12.5% {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100%   0%, 100%   0%, 100%   0% )}
+   25%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 100% 100%, 100% 100% )}
+   50%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+   62.5% {clip-path: polygon(50% 50%,100%    0, 100%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+   75%   {clip-path: polygon(50% 50%,100% 100%, 100% 100%,  100% 100%, 100% 100%, 50%  100%, 0%   100% )}
+   100%  {clip-path: polygon(50% 50%,50%  100%,  50% 100%,   50% 100%,  50% 100%, 50%  100%, 0%   100% )}
+}
+@keyframes l20-2{ 
+  0%    {transform:scaleY(1)  rotate(0deg)}
+  49.99%{transform:scaleY(1)  rotate(135deg)}
+  50%   {transform:scaleY(-1) rotate(0deg)}
+  100%  {transform:scaleY(-1) rotate(-135deg)}
+}
+.bg3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay, adjust opacity */
+  z-index: 1;
+}
+.bg2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay, adjust opacity */
+  z-index: 1;
+}
+.bg3 h1 {
+  position: relative;
+  z-index: 2; /* Make sure text is above overlay */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Text shadow for visibility */
+}
+.bg2 h1 {
+  position: relative;
+  z-index: 2; /* Make sure text is above overlay */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Text shadow for visibility */
+}
+.bg5::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay, adjust opacity */
+  z-index: 1;
+}
+
+.modal {
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+@font-face {
+  font-family: cambridge;
+  src: url("./assets//fonts/Cambridge-Bold.woff");
+}
+.chels{
+  font-family: "cambridge", sans-serif;
+}
+
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  background-color: #0e0d0d;
+  color: #f9f9f9;
+  padding: 10px 0;
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+}
+
+.marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 10s linear infinite; /* Adjust duration for desired speed */
+}
+
+.marquee-content span {
+  padding: 0 5px; /* Adjust as needed */
+}
+
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%); /* Start from the right */
+  }
+  100% {
+    transform: translateX(-100%); /* End fully to the left */
+  }
+}

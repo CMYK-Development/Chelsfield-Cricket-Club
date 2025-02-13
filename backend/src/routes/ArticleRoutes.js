@@ -1,0 +1,33 @@
+const express = require("express");
+const {
+  createArticle,
+  getAllArticles,
+  getArticleById,
+  updateArticle,
+  deleteArticle,
+  countArticle
+} = require("../controllers/ArticleController.js");
+const fs = require("fs");
+const path = require("path");
+const { uploadImage } = require("../middleware/uploadfile.js");
+
+const ArticlesRouter = express.Router();
+// Ensure the directory exists
+const uploadPath = path.join(__dirname, "../../uploads/articles");
+if (!fs.existsSync(uploadPath)) {
+  fs.mkdirSync(uploadPath, { recursive: true });
+}
+
+// Middleware for image upload
+const uploadMiddleware = uploadImage(uploadPath);
+
+ArticlesRouter.post("/articles", uploadMiddleware, createArticle); // Create an article
+ArticlesRouter.get("/articles", getAllArticles); // Get all articles
+ArticlesRouter.get("/articles/:id", getArticleById); // Get an article by ID
+// Update an article
+ArticlesRouter.put("/articles/:id",uploadMiddleware, updateArticle);
+ArticlesRouter.delete("/articles/:id", deleteArticle); // Delete an article
+ArticlesRouter.get("/countarticles", countArticle); // Delete an article
+
+
+module.exports = ArticlesRouter;
