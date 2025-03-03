@@ -48,7 +48,7 @@ const LatestNews = () => {
   const latestArticles = articles.slice(0, 4);
   // http://localhost:3000/api/v1/uploads/articles/arctile_image/5.PNG1734687120581.PNG
   return (
-    <div className="w-full bg-white mt-16">
+    <div className="w-full bg-white mt-72 max-sm:mt-24">
       <Link to="/all-news" className="flex items-center justify-center text-2xl uppercase font-semibold text-center pt-4 tracking-wider">
         Latest News
       </Link>
@@ -64,9 +64,9 @@ const LatestNews = () => {
                 onClick={() => openModal(`${apiUrl}/${article.imageUrl}`)} // Open modal on click
               />
               <div className="flex flex-col gap-4 w-full md:w-[72%]">
-                <Link to={"/all-news"} className="text-sm uppercase">Latest News</Link>
+                
                 <Link to={`/news/${article._id}`} className="text-lg font-medium">{article.title}</Link>
-                <p className="text-sm">{article.description}</p>
+                <p className="text-sm break-words max-w-full">{article.description}</p>
               </div>
             </div>
           </div>

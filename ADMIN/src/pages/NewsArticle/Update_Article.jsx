@@ -16,28 +16,29 @@ const UpdateArticle = () => {
   const [currentArticle, setCurrentArticle] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [selectedArticles, setSelectedArticles] = useState([]);
 
-  // Fetch articles from API
-  useEffect(() => {
-    const fetchArticles = async () => {
-      setLoading(true);
-      try {
-        const response = await axios.get("http://localhost:3000/api/v1/articles");
-        // console.log("response",response);
-        
-        if (response.data.success) {
-          setArticles(response.data.data);
-        } else {
-          setErrorMessage("Failed to fetch articles.");
-        }
-      } catch (error) {
-        setErrorMessage("Error fetching articles.");
-        console.error("Error fetching articles:", error);
-      } finally {
-        setLoading(false);
+
+  // Fetch articles function
+  const fetchArticles = async () => {
+    setLoading(true);
+    try {
+      const response = await axios.get("http://localhost:3000/api/v1/articles");
+      if (response.data.success) {
+        setArticles(response.data.data);
+      } else {
+        setErrorMessage("Failed to fetch articles.");
       }
-    };
+    } catch (error) {
+      setErrorMessage("Error fetching articles.");
+      console.error("Error fetching articles:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  // Call fetchArticles when component mounts
+  useEffect(() => {
     fetchArticles();
   }, []);
 
@@ -109,17 +110,53 @@ const UpdateArticle = () => {
     }
   };
 
+
+  const handleCheckboxChange = (e, articleId) => {
+    if (e.target.checked) {
+      setSelectedArticles((prev) => [...prev, articleId]);
+    } else {
+      setSelectedArticles((prev) => prev.filter((id) => id !== articleId));
+    }
+  };
+  
+
+  const handleDelete = async () => {
+    try {
+      if (selectedArticles.length > 0) {
+        await axios.delete("http://localhost:3000/api/v1/deleteArticle", {
+          data: { ids: selectedArticles },
+        });
+        setSelectedArticles([]); // Reset selection
+        fetchArticles(); // Fetch updated articles list
+      }
+    } catch (error) {
+      console.error("Error deleting articles:", error);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-100 py-8">
       {/* Top Bar */}
-      <div className="bg-gray-800 text-white py-4 px-6 flex justify-between items-center">
-        <h1 className="text-xl font-bold">News Articles</h1>
-        <Link to="/add-article">
-          <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow focus:ring focus:ring-blue-300">
-            Add New
-          </button>
-        </Link>
-      </div>
+<div className="bg-gray-800 text-white py-4 px-4 flex justify-between items-center">
+  <h1 className="text-xl font-bold">News Articles</h1>
+  <div className="flex gap-2 ml-auto">
+    <button
+      className={`bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg shadow ${
+        selectedArticles.length === 0 ? "opacity-50 cursor-not-allowed" : ""
+      }`}
+      onClick={handleDelete}
+      disabled={selectedArticles.length === 0}
+    >
+      Delete Selected
+    </button>
+    <Link to="/add-article">
+      <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow focus:ring focus:ring-blue-300">
+        Add New
+      </button>
+    </Link>
+  </div>
+</div>
+
 
       {/* Latest News Section */}
       <div className="mt-10 max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-6">
@@ -134,6 +171,13 @@ const UpdateArticle = () => {
               map((article) => (
                 <div key={article._id} className="mt-4">
                   <div className="flex justify-between items-center gap-4">
+                    {/* Checkbox */}
+                  <input
+                    type="checkbox"
+                    onChange={(e) => handleCheckboxChange(e, article._id)}
+                    checked={selectedArticles.includes(article._id)}
+                    className="w-5 h-5 cursor-pointer"
+                  />
                     <div className="flex flex-col gap-4 w-full md:w-[72%]">
                       <h2 className="text-lg font-medium">{article.title}</h2>
                       <p className="text-sm">{article.description}</p>

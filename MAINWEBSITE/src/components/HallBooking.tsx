@@ -33,7 +33,7 @@ const HallBooking = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_SERVER}/api/v1/hireHall`,
+        `http://localhost:3000/api/v1/hiremessage`,
         formData
       );
       toast.success(response.data.message);
@@ -226,7 +226,7 @@ const HallBooking = () => {
                   </div>
                   <div className="h-[100px] w-full mt-4">
                     <label className="text-gray-400">Message *</label>
-                    <textarea
+                    <input
                       name="message"
                       value={formData.message}
                       onChange={handleChange}

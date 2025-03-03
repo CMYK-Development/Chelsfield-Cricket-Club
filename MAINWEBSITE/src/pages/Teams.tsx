@@ -29,7 +29,7 @@ interface TeamsProps {
           style={{ backgroundImage: `url(${teamImage1})` }}
         >
           <div className="bg-black bg-opacity-50 w-full h-full flex items-center justify-center">
-            <h1 className="md:text-[60px] text-[40px] font-bold text-white uppercase">{teamName}</h1>
+            <h1 className="md:text-[28px] text-[40px] font-bold text-white uppercase">{teamName}</h1>
           </div>
         </div>
   

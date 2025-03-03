@@ -4,7 +4,7 @@ import glimps3 from "../assets/club history/glimps3.jpg";
 import glimps2 from "../assets/club history/glimpse2.jpg";
 import historicMatch from "../assets/club history/historic match.jpg";
 import pitchPreparation from "../assets/club history/pitch preparation.jpg";
-import daveWalker from "../assets/club history/Dave Walker.jpg"
+import history from "../assets/users/history.jpeg"
 import oldPavilion from "../assets/club history/old pavillion black.jpg";
 import heroImage from "../assets/club history/hero image.jpg";
 import PastPlayers from "../components/PastPlayers";
@@ -35,11 +35,11 @@ const History = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           <img
-            src={daveWalker}
+            src={history}
             alt="Pitch Preparation"
-            className="rounded-lg h-[400px] w-full lg:w-[450px] shadow-lg hover:scale-105 transition-transform duration-300"
+            className="rounded-lg h-[500px] w-full lg:w-[450px] shadow-lg hover:scale-105 transition-transform duration-300"
           />
-          <p className="text-gray-600">
+          <p className="text-gray-600 leading-relaxed text-justify">
             After World War II, John Bristow spearheaded the club's revival. His extensive cricket network brought 
             talented players to the club, forming what became known as the “Chelsfield All Stars.” Thursday evenings 
             were dedicated to pitch preparation, a communal task that fostered camaraderie.
@@ -47,7 +47,7 @@ const History = () => {
         </div>
         {/* Early Years Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-          <p className="text-gray-600">
+          <p className="text-gray-600 leading-relaxed text-justify">
             During the interwar period, Chelsfield was a small, close-knit village where most of the cricket team 
             came from the local area. With few cars on the roads, players traveled to away games in horse-drawn carts. 
             The cricket club was a major hub of social life, and it’s said that horses, wearing protective boots, were 
@@ -67,7 +67,7 @@ const History = () => {
             alt="Pitch Preparation"
             className="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
           />
-          <p className="text-gray-600">
+          <p className="text-gray-600 leading-relaxed text-justify">
             After World War II, John Bristow spearheaded the club's revival. His extensive cricket network brought 
             talented players to the club, forming what became known as the “Chelsfield All Stars.” Thursday evenings 
             were dedicated to pitch preparation, a communal task that fostered camaraderie.
@@ -76,7 +76,7 @@ const History = () => {
 
         {/* The Pavilions Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-          <p className="text-gray-600">
+          <p className="text-gray-600 leading-relaxed text-justify">
             The original wooden pavilion, moved by horse and cart in 1924, bears a scar from World War II—a hole in 
             the floor from shrapnel. Today, the old pavilion stands with listed status, symbolizing the club's history 
             and resilience. Interestingly, the “new” pavilion was an old school building from Seal, near Sevenoaks, 
@@ -96,7 +96,7 @@ const History = () => {
             alt="Community Gathering"
             className="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
           />
-          <p className="text-gray-600">
+          <p className="text-gray-600 leading-relaxed text-justify">
             As Chelsfield Cricket Club enters its second century, memories of horse-drawn carts, hand-pulled rollers, 
             and the local blacksmith remain integral to its legacy. The club continues to thrive, blending tradition 
             with modern developments to foster talent and serve the community.

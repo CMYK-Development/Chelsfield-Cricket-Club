@@ -175,25 +175,25 @@ console.log("image",image);
 
 
 // Delete Article
-exports.deleteArticle = async (req, res, next) => {
-  try {
-    const { id } = req.params;
+// exports.deleteArticle = async (req, res, next) => {
+//   try {
+//     const { id } = req.params;
 
-    const deletedArticle = await Article.findByIdAndDelete(id);
+//     const deletedArticle = await Article.findByIdAndDelete(id);
 
-    if (!deletedArticle) {
-      res.status(404).json({ success: false, message: 'Article not found.' });
-      return;
-    }
+//     if (!deletedArticle) {
+//       res.status(404).json({ success: false, message: 'Article not found.' });
+//       return;
+//     }
 
-    res.status(200).json({
-      success: true,
-      message: 'Article deleted successfully.',
-    });
-  } catch (error) {
-    next(error);
-  }
-};
+//     res.status(200).json({
+//       success: true,
+//       message: 'Article deleted successfully.',
+//     });
+//   } catch (error) {
+//     next(error);
+//   }
+// };
 
 
 exports.countArticle = async (req, res) => {
@@ -202,5 +202,16 @@ exports.countArticle = async (req, res) => {
     res.json({ count });
   } catch (err) {
     res.status(500).json({ error: "Error fetching articles count" });
+  }
+};
+
+
+exports.deleteArticle = async (req, res) => {
+  try {
+      const { ids } = req.body; // expecting an array of team IDs
+      await Article.deleteMany({ _id: { $in: ids } }); // Use $in to match multiple IDs
+      res.status(200).json({ message: 'Article deleted successfully' });
+  } catch (error) {
+      res.status(500).json({ error: 'Failed to delete articles' });
   }
 };

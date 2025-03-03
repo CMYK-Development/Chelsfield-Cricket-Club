@@ -27,7 +27,8 @@ const Index = () => {
     const [pageSize, setPageSize] = useState(PAGE_SIZES[0]);
 
     const [counts, setCounts] = useState({
-        teams: 0,
+        // teams: 0,
+        members:0,
         news: 0,
         images: 0,
     });
@@ -55,12 +56,14 @@ const Index = () => {
 
     const fetchCounts = async () => {
         try {
-            const teamsResponse = await axios.get('http://localhost:3000/api/v1/countteam');
+            // const teamsResponse = await axios.get('http://localhost:3000/api/v1/countteam');
+            const membersResponse = await axios.get('http://localhost:3000/api/v1/countMember');
             const newsResponse = await axios.get('http://localhost:3000/api/v1/countarticles');
             const imagesResponse = await axios.get('http://localhost:3000/api/v1/countsliders');
 
             setCounts({
-                teams: teamsResponse.data.count || 0,
+                // teams: teamsResponse.data.count || 0,
+                members: membersResponse.data.count || 0,
                 news: newsResponse.data.count || 0,
                 images: imagesResponse.data.count || 0,
             });
@@ -264,7 +267,7 @@ const Index = () => {
                     <div className="panel h-full">
                         <div className="flex items-center mb-5">
                             <h5 className="font-semibold text-lg dark:text-white-light">
-                                Teams
+                                Members
                                 {/* <span className="block text-white-dark text-sm font-normal">Go to columns for details.</span> */}
                             </h5>
                             <div className="ltr:ml-auto rtl:mr-auto relative">
@@ -289,7 +292,7 @@ const Index = () => {
                                     </div>
                                 ) : (
                                     <div>
-                                        <h5 className="font-semibold text-2xl dark:text-white-light">{counts.teams}</h5>
+                                        <h5 className="font-semibold text-2xl dark:text-white-light">{counts.members}</h5>
                                     </div>
                                 )}
                             </div>

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import headCoach from "../assets/All Players/player8.jpg";
-import AfaqPunjabi from "../assets/users/Afaq Punjabi.jpg";
+import AfaqPunjabi from "../assets/users/afaq bhai.jpeg";
 import NaeemAhad from "../assets/users/NaeemAhad-removebg-preview.png";
-import TanveerAslam from "../assets/users/Tanveer Aslam.jpg";
+import Rao from "../assets/users/Rao.jpeg";
 import Asjad2 from "../assets/users/Untitled design (6).png";
 import MaheshKannan from "../assets/users/Mahesh Kannan.jpg"
 interface ClubContactProps {
@@ -65,23 +65,23 @@ const ClubContacts = () => {
         <KeyClubContact
           name="Naeem Ahad"
           position="Chairman"
-          email="Naeem@chelsfieldcc.co.uk"
+          email="naeem@chelsfieldcc.co.uk"
           number="+44 7572 427856"
           image={NaeemAhad}
           onImageClick={openModal} // Pass the click handler
         />
           <KeyClubContact
           name="Mahesh Kannan"
-          position="Interim Secretary"
-          email="Mahesh@chelsfieldCC.co.uk"
-          number="+447865988332"
+          position="Secretary"
+          email="mahesh@chelsfieldcc.co.uk"
+          number="+44 7865 988332"
           image={MaheshKannan}
           onImageClick={openModal} // Pass the click handler
         />
         <KeyClubContact
           name="Asjad Mir"
           position="Treasurer"
-          email="Asjad@chelsfieldcc.co.uk"
+          email="asjad@chelsfieldcc.co.uk"
           number="+44 7984 130132"
           image={Asjad2}
           onImageClick={openModal} // Pass the click handler
@@ -89,17 +89,17 @@ const ClubContacts = () => {
         <KeyClubContact
           name="Afaq Punjabi"
           position="Operations Officer"
-          email="Afaq@chelsfieldcc.co.uk"
+          email="afaq@chelsfieldcc.co.uk"
           number="+44 7958 044726"
           image={AfaqPunjabi}
           onImageClick={openModal} // Pass the click handler
         />
         <KeyClubContact
-          name="Tanveer Aslam"
-          position="Skill Development Officer"
-          email="Tanveer@chelsfieldcc.co.uk"
-          number="+44 7877 729107"
-          image={TanveerAslam}
+          name="Rao Fahad"
+          position="Co-Treasurer and Web Master"
+          email="rao@chelsfieldcc.co.uk "
+          number="+44 7401 686333"
+          image={Rao}
           onImageClick={openModal} // Pass the click handler
         />
         <KeyClubContact

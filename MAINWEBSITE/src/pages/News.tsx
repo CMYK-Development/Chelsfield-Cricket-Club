@@ -50,32 +50,32 @@ const News = () => {
     fetchArticles();
 
     // Static news data
-    setStaticNews([
-      {
-        id: 1,
-        image: FourthNews,
-        title: "Exciting News for Chelsfield CC!",
-        description: "CCC 3s will compete in the Kent Cricket League starting May 2025...",
-      },
-      {
-        id: 2,
-        image: indoorleague,
-        title: "CCC first year in Indoor Cricket League",
-        description: "Chelsfield Cricket Club is thrilled to join the Indoor Cricket League...",
-      },
-      {
-        id: 3,
-        image: groundWork,
-        title: "Ground work started for 2025 season",
-        description: "We are excited to announce that groundwork for the 2025 season has officially commenced...",
-      },
-      {
-        id: 4,
-        image: ManOfMatch,
-        title: "Man of the Match",
-        description: "Congratulations to our Man of the Match for the Sam Memorial Match...",
-      },
-    ]);
+    // setStaticNews([
+    //   {
+    //     id: 1,
+    //     image: FourthNews,
+    //     title: "Exciting News for Chelsfield CC!",
+    //     description: "CCC 3s will compete in the Kent Cricket League starting May 2025...",
+    //   },
+    //   {
+    //     id: 2,
+    //     image: indoorleague,
+    //     title: "CCC first year in Indoor Cricket League",
+    //     description: "Chelsfield Cricket Club is thrilled to join the Indoor Cricket League...",
+    //   },
+    //   {
+    //     id: 3,
+    //     image: groundWork,
+    //     title: "Ground work started for 2025 season",
+    //     description: "We are excited to announce that groundwork for the 2025 season has officially commenced...",
+    //   },
+    //   {
+    //     id: 4,
+    //     image: ManOfMatch,
+    //     title: "Man of the Match",
+    //     description: "Congratulations to our Man of the Match for the Sam Memorial Match...",
+    //   },
+    // ]);
   }, []);
 
   return (
@@ -87,7 +87,7 @@ const News = () => {
 
       {/* API News Section */}
       <div className="w-[80%] bg-white mx-auto mt-12">
-        <h2 className="text-xl font-bold mb-4">API News</h2>
+        {/* <h2 className="text-xl font-bold mb-4">API News</h2> */}
         {apiNews.map((news) => (
           <div key={news._id} className="mt-4">
             <div className="flex max-sm:flex-col mt-4 gap-4">
@@ -98,9 +98,9 @@ const News = () => {
                 onClick={() => openModal(`${serverUrl}${news.image}`)} // Open modal on click
               />
               <div className="flex flex-col gap-4 w-full md:w-[72%]">
-                <h3 className="text-sm uppercase">Latest News</h3>
+                {/* <h3 className="text-sm uppercase">Latest News</h3> */}
                 <h2 className="text-lg font-medium">{news.title}</h2>
-                <p className="text-sm">{news.description}</p>
+                <p className="text-sm break-words max-w-full">{news.description}</p>
               </div>
             </div>
           </div>
@@ -109,7 +109,7 @@ const News = () => {
 
       {/* Static News Section */}
       <div className="w-[80%] bg-white mx-auto mt-8">
-        <h2 className="text-xl font-bold mb-4">Static News</h2>
+        {/* <h2 className="text-xl font-bold mb-4">Static News</h2> */}
         {staticNews.map((news) => (
           <div key={news.id} className="mt-4">
             <div className="flex max-sm:flex-col mt-4 gap-4">
@@ -120,7 +120,7 @@ const News = () => {
                 onClick={() => openModal(news.image)} // Open modal on click
               />
               <div className="flex flex-col gap-4 w-full md:w-[72%]">
-                <h3 className="text-sm uppercase">Latest News</h3>
+                {/* <h3 className="text-sm uppercase">Latest News</h3> */}
                 <h2 className="text-lg font-medium">{news.title}</h2>
                 <p className="text-sm">{news.description}</p>
               </div>

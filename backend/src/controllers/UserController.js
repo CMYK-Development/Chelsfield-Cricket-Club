@@ -1,7 +1,7 @@
 const XLSX = require("xlsx");
 const { writeFileSync, existsSync, mkdirSync } = require("fs");
 const path = require("path");
-const { sendEmail } = require("../utils/sendEmail");
+const { sendEmail, sendMessage, sendHireMessage } = require("../utils/sendEmail");
 const { Member } = require("../models/UserModel");
 const fs = require("fs");
 exports.MembershipController = async (req, res, next) => {
@@ -107,6 +107,71 @@ exports.MembershipController = async (req, res, next) => {
     throw new Error("Failed to send email");
   }
 };
+
+
+exports.MembershipControllerMessage = async (req, res, next) => {
+  const { name, email, phone, message } = req.body;
+
+  console.log("req.body", req.body);
+
+  // Check for required fields
+  if (!name || !email || !phone || !message) {
+    return res.status(400).json({ success: false, message: "Please fill all the required fields." });
+  }
+
+  const emailOptions3 = {
+    subject: "Message", // Setting the email subject to "Eid"
+    name: name,
+    email: email,
+    phone: phone,
+    message: message
+  };
+
+  try {
+    await sendMessage(emailOptions3);
+    res.status(200).json({
+      success: true,
+      message: "Email sent successfully",
+    });
+  } catch (error) {
+    console.error("Failed to send email:", error);
+    return res.status(500).json({ success: false, message: "Failed to send email" });
+  }
+};
+
+
+exports.MembershipControllerHireMessage = async (req, res, next) => {
+  const { name, email, phone, bookingType, message } = req.body;
+
+  console.log("req.body", req.body);
+
+  // Check for required fields
+  if (!name || !email || !phone || !bookingType || !message) {
+    return res.status(400).json({ success: false, message: "Please fill all the required fields." });
+  }
+
+  const emailOptions4 = {
+    subject: "Message for Hiring", // Setting the email subject to "Eid"
+    name: name,
+    email: email,
+    phone: phone,
+    bookingType: bookingType,
+    message: message
+  };
+
+  try {
+    await sendHireMessage(emailOptions4);
+    res.status(200).json({
+      success: true,
+      message: "Email sent successfully",
+    });
+  } catch (error) {
+    console.error("Failed to send email:", error);
+    return res.status(500).json({ success: false, message: "Failed to send email" });
+  }
+};
+
+
 exports.allMember = async (req, res) => {
   try {
     const members = await Member.find();
@@ -123,5 +188,14 @@ exports.deleteMember = async (req, res) => {
       res.status(200).json({ message: 'Member deleted successfully' });
   } catch (error) {
       res.status(500).json({ error: 'Failed to delete member' });
+  }
+};
+
+exports.countMember = async (req, res) => {
+  try {
+    const count = await Member.countDocuments({});
+    res.json({ count });
+  } catch (err) {
+    res.status(500).json({ error: "Error fetching members count" });
   }
 };

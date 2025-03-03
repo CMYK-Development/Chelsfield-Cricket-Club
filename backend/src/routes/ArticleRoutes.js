@@ -26,8 +26,9 @@ ArticlesRouter.get("/articles", getAllArticles); // Get all articles
 ArticlesRouter.get("/articles/:id", getArticleById); // Get an article by ID
 // Update an article
 ArticlesRouter.put("/articles/:id",uploadMiddleware, updateArticle);
-ArticlesRouter.delete("/articles/:id", deleteArticle); // Delete an article
+// ArticlesRouter.delete("/articles/:id", deleteArticle); // Delete an article
 ArticlesRouter.get("/countarticles", countArticle); // Delete an article
+ArticlesRouter.delete('/deleteArticle', deleteArticle);
 
 
 module.exports = ArticlesRouter;

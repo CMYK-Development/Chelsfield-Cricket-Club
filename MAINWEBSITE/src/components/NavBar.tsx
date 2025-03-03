@@ -93,7 +93,7 @@ const NavBar = () => {
   />
   <div className="flex flex-col items-center justify-center">
   <h2 className="text-white font-serif text-2xl lg:text-6xl">Chelsfield Cricket Club</h2>
-  <p className="text-white font-serif text-sm lg:text-lg">Since 1931</p>
+  <p className="text-white font-serif text-sm lg:text-lg">Since 1731</p>
   </div>
 </div>
 
@@ -116,7 +116,7 @@ const NavBar = () => {
        <div className="flex gap-8 items-center text-black text-base max-sm:text-sm font-semibold">
          <Link
            to={"/"}
-           className={`hover:text-blue-500 transition-all duration-300 ${
+           className={`text-sm hover:text-blue-500 transition-all duration-300 ${
              location.pathname === "/" ? "text-blue-500" : ""
            }`}
          >
@@ -124,7 +124,7 @@ const NavBar = () => {
          </Link>
          <Link
            to={"/about"}
-           className={`hover:text-blue-500 transition-all duration-300 text-nowrap ${
+           className={`text-sm hover:text-blue-500 transition-all duration-300 text-nowrap ${
              location.pathname === "/about" ? "text-blue-500" : ""
            }`}
          >
@@ -132,7 +132,7 @@ const NavBar = () => {
          </Link>
          <Link
            to={"/club-history"}
-           className={`hover:text-blue-500 transition-all duration-300 text-nowrap ${
+           className={`text-sm hover:text-blue-500 transition-all duration-300 text-nowrap ${
              location.pathname === "/club-history" ? "text-blue-500" : ""
            }`}
          >
@@ -140,7 +140,7 @@ const NavBar = () => {
          </Link>
          <Link
            to={"/gallery"}
-           className={`hover:text-blue-500 transition-all duration-300 text-nowrap ${
+           className={`text-sm hover:text-blue-500 transition-all duration-300 text-nowrap ${
              location.pathname === "/gallery" ? "text-blue-500" : ""
            }`}
          >
@@ -149,7 +149,7 @@ const NavBar = () => {
          {/* Teams Dropdown */}
          <div className="">
            <button
-             className={`hover:text-blue-500 transition-all duration-300 ${
+             className={`text-sm hover:text-blue-500 transition-all duration-300 ${
                location.pathname.includes("/teams") ? "text-blue-500" : ""
              }`}
              onClick={toggleDropdown}
@@ -222,7 +222,7 @@ const NavBar = () => {
         
          <Link
            to={"https://chelsfield.play-cricket.com/Matches"}
-           className={`hover:text-blue-500 transition-all duration-300 text-nowrap ${
+           className={`text-sm hover:text-blue-500 transition-all duration-300 text-nowrap ${
              location.pathname === "/fixtures" ? "text-blue-500" : ""
            }`}
          >
@@ -230,7 +230,7 @@ const NavBar = () => {
          </Link>
          <Link
            to={"https://chelsfield.play-cricket.com/Statistics"}
-           className={`hover:text-blue-500 transition-all duration-300 ${
+           className={`text-sm hover:text-blue-500 transition-all duration-300 ${
              location.pathname === "/stats" ? "text-blue-500" : ""
            }`}
          >
@@ -238,7 +238,7 @@ const NavBar = () => {
          </Link>
          <Link
            to={"https://youtube.com/@chelsfieldcc-en8ru?si=htRWSKscg54teiXC"}
-           className={`hover:text-blue-500 transition-all duration-300 ${
+           className={`text-sm hover:text-blue-500 transition-all duration-300 ${
              location.pathname === "/livestream" ? "text-blue-500" : ""
            }`}
          >
@@ -246,7 +246,7 @@ const NavBar = () => {
          </Link>
          <Link
            to={"/hall"}
-           className={`hover:text-blue-500 transition-all duration-300 text-nowrap ${
+           className={`text-sm hover:text-blue-500 transition-all duration-300 text-nowrap ${
              location.pathname === "/hall" ? "text-blue-500" : ""
            }`}
          >
@@ -254,7 +254,7 @@ const NavBar = () => {
          </Link>
          <Link
            to={"/touch"}
-           className={`hover:text-blue-500 transition-all duration-300 text-nowrap ${
+           className={`text-sm hover:text-blue-500 transition-all duration-300 text-nowrap ${
              location.pathname === "/touch" ? "text-blue-500" : ""
            }`}
          >

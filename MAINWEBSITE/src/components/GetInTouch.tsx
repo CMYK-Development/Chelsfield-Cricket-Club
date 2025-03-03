@@ -23,7 +23,7 @@ const GetInTouch = () => {
   const handleSubmit = async (e:any) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${import.meta.env.VITE_SERVER}/api/v1/touch`, formData);
+      const response = await axios.post(`http://localhost:3000/api/v1/message`, formData);
       toast.success(response.data.message);
       setFormData({ name: '', email: '', phone: '', message: '' });
     } catch (error) {

@@ -45,13 +45,13 @@ const Members = () => {
         }
     };
 
-    const GenerateList = async () => {
-        try {
-                await axios.delete('http://localhost:3000/api/v1/emailMember');
-        } catch (error) {
-            console.error('Error sending email:', error);
-        }
-    };
+    // const GenerateList = async () => {
+    //     try {
+    //             await axios.delete('http://localhost:3000/api/v1/emailMember');
+    //     } catch (error) {
+    //         console.error('Error sending email:', error);
+    //     }
+    // };
 
     const handleCheckboxChange = (e, memberId) => {
         if (e.target.checked) {
