@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const apiUrl = 'http://localhost:3000/api/v1/';
-const serverUrl = 'http://localhost:3000/';
+const apiUrl = 'https://backend-chelsfield.ironstepsoftware.com/api/v1/';
+const serverUrl = 'https://backend-chelsfield.ironstepsoftware.com/';
 const getArticlesUrl = `${apiUrl}/articles`;
 
 const LatestNews = () => {
@@ -46,14 +46,14 @@ const LatestNews = () => {
 
   // Show only the latest 4 articles
   const latestArticles = articles.slice(0, 4);
-  // http://localhost:3000/api/v1/uploads/articles/arctile_image/5.PNG1734687120581.PNG
+  // https://backend-chelsfield.ironstepsoftware.com/api/v1/uploads/articles/arctile_image/5.PNG1734687120581.PNG
   return (
     <div className="w-full bg-white mt-72 max-sm:mt-24">
       <Link to="/all-news" className="flex items-center justify-center text-2xl uppercase font-semibold text-center pt-4 tracking-wider">
         Latest News
       </Link>
       <div className="w-[80%] bg-white mx-auto mt-8">
-        {latestArticles.map((article) => (
+        {latestArticles.slice().reverse().map((article) => (
           <div key={article._id} className="mt-4">
             <hr />
             <div className="flex max-sm:flex-col mt-4 gap-4">

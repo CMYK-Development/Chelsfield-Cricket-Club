@@ -23,7 +23,7 @@ const GetInTouch = () => {
   const handleSubmit = async (e:any) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`http://localhost:3000/api/v1/message`, formData);
+      const response = await axios.post(`https://backend-chelsfield.ironstepsoftware.com/api/v1/message`, formData);
       toast.success(response.data.message);
       setFormData({ name: '', email: '', phone: '', message: '' });
     } catch (error) {

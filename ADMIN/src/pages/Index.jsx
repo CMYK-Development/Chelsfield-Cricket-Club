@@ -56,10 +56,10 @@ const Index = () => {
 
     const fetchCounts = async () => {
         try {
-            // const teamsResponse = await axios.get('http://localhost:3000/api/v1/countteam');
-            const membersResponse = await axios.get('http://localhost:3000/api/v1/countMember');
-            const newsResponse = await axios.get('http://localhost:3000/api/v1/countarticles');
-            const imagesResponse = await axios.get('http://localhost:3000/api/v1/countsliders');
+            // const teamsResponse = await axios.get('https://backend-chelsfield.ironstepsoftware.com/api/v1/countteam');
+            const membersResponse = await axios.get('https://backend-chelsfield.ironstepsoftware.com/api/v1/countMember');
+            const newsResponse = await axios.get('https://backend-chelsfield.ironstepsoftware.com/api/v1/countarticles');
+            const imagesResponse = await axios.get('https://backend-chelsfield.ironstepsoftware.com/api/v1/countsliders');
 
             setCounts({
                 // teams: teamsResponse.data.count || 0,
@@ -74,7 +74,7 @@ const Index = () => {
 
     const fetchAdminData = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/api/v1/alladmin');
+            const response = await axios.get('https://backend-chelsfield.ironstepsoftware.com/api/v1/alladmin');
             // console.log(response);
             //  // Your API endpoint for fetching admins
             setAdmins(response.data); // Assuming `Result` holds the array of admins
@@ -181,7 +181,7 @@ const Index = () => {
             console.log('id', id);
 
             navigate(`/edit-admin/${id}`);
-            // await axios.put(`http://localhost:3000/api/v1/updateadmin/${id}`, updatedData);
+            // await axios.put(`https://backend-chelsfield.ironstepsoftware.com/api/v1/updateadmin/${id}`, updatedData);
             fetchAdminData(); // Re-fetch admins after updating
         } catch (error) {
             console.error('Error updating admin:', error);
@@ -192,7 +192,7 @@ const Index = () => {
         try {
             console.log('id', id);
 
-            await axios.delete(`http://localhost:3000/api/v1/deleteadmin/${id}`);
+            await axios.delete(`https://backend-chelsfield.ironstepsoftware.com/api/v1/deleteadmin/${id}`);
             // Re-fetch companies after deleting
             fetchAdminData();
         } catch (error) {

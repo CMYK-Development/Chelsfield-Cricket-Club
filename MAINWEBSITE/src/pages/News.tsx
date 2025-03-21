@@ -7,8 +7,8 @@ import indoorleague from "../assets/All Teams/Indoor League New 2.jpg";
 import ManOfMatch from "../assets/News/Man of the match.jpg";
 import FourthNews from "../assets/News/fourth News.jpg";
 
-const apiUrl = 'http://localhost:3000/api/v1/';
-const serverUrl = 'http://localhost:3000/';
+const apiUrl = 'https://backend-chelsfield.ironstepsoftware.com/api/v1/';
+const serverUrl = 'https://backend-chelsfield.ironstepsoftware.com/';
 const getArticlesUrl = `${apiUrl}articles`;
 
 const News = () => {
@@ -88,7 +88,7 @@ const News = () => {
       {/* API News Section */}
       <div className="w-[80%] bg-white mx-auto mt-12">
         {/* <h2 className="text-xl font-bold mb-4">API News</h2> */}
-        {apiNews.map((news) => (
+        {apiNews.slice().reverse().map((news) => (
           <div key={news._id} className="mt-4">
             <div className="flex max-sm:flex-col mt-4 gap-4">
               <img

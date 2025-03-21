@@ -22,7 +22,7 @@ const TeamManagement = () => {
 
     const fetchTeamData = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/api/v1/allteam');
+            const response = await axios.get('https://backend-chelsfield.ironstepsoftware.com/api/v1/allteam');
             setTeamData(response.data); // Assuming the API returns an array of team members
         } catch (error) {
             console.error('Error fetching team data:', error);
@@ -45,7 +45,7 @@ const TeamManagement = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:3000/api/v1/addteam', formData);
+            await axios.post('https://backend-chelsfield.ironstepsoftware.com/api/v1/addteam', formData);
             fetchTeamData(); // Refresh data after adding a new team member
             setFormData({ name: '', email: '', phone: '' });
             setIsModalOpen(false);
@@ -62,7 +62,7 @@ const TeamManagement = () => {
     const handleDelete = async () => {
         try {
             if (selectedTeams.length > 0) {
-                await axios.delete('http://localhost:3000/api/v1/deleteteam', {
+                await axios.delete('https://backend-chelsfield.ironstepsoftware.com/api/v1/deleteteam', {
                     data: { ids: selectedTeams },
                 });
                 fetchTeamData(); // Refresh data after deletion

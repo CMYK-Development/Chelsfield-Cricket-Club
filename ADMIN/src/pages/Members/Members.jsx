@@ -15,7 +15,7 @@ const Members = () => {
 
     const fetchmemberData = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/api/v1/allMember');
+            const response = await axios.get('https://backend-chelsfield.ironstepsoftware.com/api/v1/allMember');
             setMemberData(response.data);
         } catch (error) {
             console.error('Error fetching member data:', error);
@@ -33,7 +33,7 @@ const Members = () => {
     const handleDelete = async () => {
         try {
             if (selectedMembers.length > 0) {
-                await axios.delete('http://localhost:3000/api/v1/deleteMember', {
+                await axios.delete('https://backend-chelsfield.ironstepsoftware.com/api/v1/deleteMember', {
                     data: { ids: selectedMembers },
                 });
                 fetchmemberData();
@@ -47,7 +47,7 @@ const Members = () => {
 
     // const GenerateList = async () => {
     //     try {
-    //             await axios.delete('http://localhost:3000/api/v1/emailMember');
+    //             await axios.delete('https://backend-chelsfield.ironstepsoftware.com/api/v1/emailMember');
     //     } catch (error) {
     //         console.error('Error sending email:', error);
     //     }

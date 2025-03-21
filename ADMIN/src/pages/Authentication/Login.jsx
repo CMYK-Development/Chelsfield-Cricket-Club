@@ -36,7 +36,7 @@ const Login = () => {
 
         try {
             // Send login request to the backend API
-            const response = await axios.post('http://localhost:3000/api/v1/loginadmin', {
+            const response = await axios.post('http://localhost:3000/api/v1/loginadmin/', {
                 email: values.email,
                 password: values.password,
             });

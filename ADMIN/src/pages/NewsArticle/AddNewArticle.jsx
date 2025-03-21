@@ -31,7 +31,7 @@ const AddNewArticle = () => {
 
       // Make the POST request to your API endpoint
       const response = await axios.post(
-        "http://localhost:3000/api/v1/articles",
+        "https://backend-chelsfield.ironstepsoftware.com/api/v1/articles",
         formData,
         {
           headers: {

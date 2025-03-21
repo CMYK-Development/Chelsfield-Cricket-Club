@@ -1,5 +1,5 @@
-export const serverUrl = 'http://localhost:3000';
-export const apiUrl = 'http://localhost:3000/api/v1/';
+export const serverUrl = 'https://backend-chelsfield.ironstepsoftware.com';
+export const apiUrl = 'https://backend-chelsfield.ironstepsoftware.com/api/v1/';
 
 export const addSliderImageUrl = `${apiUrl}/upload-slider-image`;
 export const getSliderImageUrl = `${apiUrl}/get-slider-images`;

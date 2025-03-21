@@ -6,8 +6,8 @@ import image2 from "../assets/HeroSectionImages/Second.jpg";
 import image3 from "../assets/HeroSectionImages/thirdImage.jpg";
 import image4 from "../assets/HeroSectionImages/fourthImage.jpg";
 
-const apiUrl = 'http://localhost:3000/api/v1/';
-const serverUrl = 'http://localhost:3000';
+const apiUrl = 'https://backend-chelsfield.ironstepsoftware.com/api/v1/';
+const serverUrl = 'https://backend-chelsfield.ironstepsoftware.com';
 const getSliderImageUrl = `${apiUrl}/get-slider-images`;
 
 interface HeroCountProps {

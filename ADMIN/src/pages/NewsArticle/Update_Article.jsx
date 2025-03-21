@@ -23,7 +23,7 @@ const UpdateArticle = () => {
   const fetchArticles = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:3000/api/v1/articles");
+      const response = await axios.get("https://backend-chelsfield.ironstepsoftware.com/api/v1/articles");
       if (response.data.success) {
         setArticles(response.data.data);
       } else {
@@ -78,7 +78,7 @@ const UpdateArticle = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:3000/api/v1/articles/${currentArticle._id}`,
+        `https://backend-chelsfield.ironstepsoftware.com/api/v1/articles/${currentArticle._id}`,
         updatedData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -123,7 +123,7 @@ const UpdateArticle = () => {
   const handleDelete = async () => {
     try {
       if (selectedArticles.length > 0) {
-        await axios.delete("http://localhost:3000/api/v1/deleteArticle", {
+        await axios.delete("https://backend-chelsfield.ironstepsoftware.com/api/v1/deleteArticle", {
           data: { ids: selectedArticles },
         });
         setSelectedArticles([]); // Reset selection

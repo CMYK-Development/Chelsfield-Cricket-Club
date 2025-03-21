@@ -28,9 +28,9 @@ const GalleryPage = () => {
     // { id: 2, src: '/assets/images/image2.jpg', selected: false, order: null },
     // { id: 3, src: '/assets/images/image3.jpg', selected: false, order: null },
 ]);
-  const apiUrl = 'http://localhost:3000/api/v1/';
+  const apiUrl = 'https://backend-chelsfield.ironstepsoftware.com/api/v1/';
   const getGalleryImageUrl=`${apiUrl}/get-gallery-images`;
-  const serverUrl = 'http://localhost:3000';
+  const serverUrl = 'https://backend-chelsfield.ironstepsoftware.com';
   const images = [
     image1,
     image2,
@@ -103,7 +103,7 @@ console.log("image",image)
       <Gallery images={images} />
       <div className="w-[90%] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {
-        image.map((img,index)=>{
+        image.slice().reverse().map((img,index)=>{
           return <img src={img.src} alt={`Image ${img.src}`} className="w-full h-64 bg-cover cursor-pointer bg-center rounded-lg shadow-lg" />        
         }
           

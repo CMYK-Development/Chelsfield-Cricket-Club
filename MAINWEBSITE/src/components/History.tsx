@@ -26,7 +26,7 @@ const History = () => {
   };
 
   return (
-    <div className="w-full bg-white pt-8 pb-16 max-sm:pb-0">
+    <div className="w-full bg-white pt-8 max-sm:pb-0">
       <Link to="/club-history" className="flex items-center justify-center text-2xl uppercase font-semibold text-center pt-4 tracking-wider">
         Club History
       </Link>
@@ -55,30 +55,31 @@ const History = () => {
       </div>
 
 
-      <Link to="/about" className="flex items-center mt-36 justify-center text-2xl uppercase font-semibold text-center tracking-wider">
-        Chairman's Statement
+      <Link to="/about" className="flex items-center mt-36 max-sm:mt-24 justify-center text-2xl uppercase font-semibold text-center tracking-wider">
+        About Us
       </Link>
       <div className="flex flex-row max-sm:flex-col mt-12 max-sm:mt-16 items-center justify-center">
 
- <div className="h-[400px] w-[90%] md:w-[500px] max-sm:mb-72 mx-auto flex flex-col gap-3 text-center items-center">
-          <div className="md:mt-24">
+ <div className="h-[400px] w-[90%] md:w-[500px] max-sm:mb-64 mx-auto flex flex-col gap-3 text-center items-center">
+          <div className="md:mt-0">
           <img
             className="h-[275px] w-[275px] mx-auto cursor-pointer"
             src={vicepresident}
             alt="Old Pavilion"
             onClick={() => openModal(vicepresident)} // Open modal on click
           />
-          <p className="text-lg font-semibold mb-4">VICE PRESIDENT</p>
+          <p className="text-lg font-semibold">VICE PRESIDENT</p>
+          <p className="text-sm font-semibold mb-4">Mr Shakil Ahmed</p>
           <p className="text-sm w-[330px] text-justify">
           As Vice President of Chelsfield Cricket Club and First XI Skipper, I extend my heartfelt thanks to all players, coaches, volunteers, sponsors, and supporters for their invaluable contributions over the past year. I wish all members continued success and hope you play with pride, passion, and enjoyment for years to come.
 
-Cricket is more than just a game. It is built on respect, integrity, and the Spirit of Cricket. As players, we must uphold these values, ensuring the game is always played in a truly sportsmanlike manner. While we must follow the Laws, we must also safeguard the Spirit of Cricket. Let us continue to honour this great tradition, both on and off the field.
+Cricket is more than just a game. It is built on respect, integrity, and the Spirit of Cricket. We must uphold these values, ensuring true sportsmanship.
           </p>
         </div>
         </div>
 
 
-        <div className="h-[400px] w-[90%] md:w-[500px] max-sm:mb-48 mx-auto flex flex-col gap-3 text-center items-center">
+        <div className="h-[400px] w-[90%] md:w-[500px] max-sm:mb-64 mx-auto flex flex-col gap-3 text-center items-center">
         
           <img
             className="h-[275px] w-[275px] mx-auto cursor-pointer"
@@ -86,14 +87,15 @@ Cricket is more than just a game. It is built on respect, integrity, and the Spi
             alt="Old Pavilion"
             onClick={() => openModal(aboutImage)} // Open modal on click
           />
-          <p className="text-lg font-semibold mb-4">CHAIRMAN</p>
+          <p className="text-lg font-semibold">CHAIRMAN</p>
+          <p className="text-sm font-semibold">Mr Naeem Ahad</p>
           <p className="text-sm w-[330px] text-justify">
              As Chairman of this great club, I would like to take this
               opportunity to extend my heartfelt thanks to everyone who has been
               part of Chelsfield Cricket Club over the past year. Whether you
               are a player, coach, volunteer, sponsor, or supporter, your
               contribution has been invaluable to our continued success both on
-              and off the field.
+              and off the field. Chelsfield Cricket Club is more than just the cricket we play. It is about the community we are building together.
           </p>
         </div>
       
@@ -122,14 +124,15 @@ Cricket is more than just a game. It is built on respect, integrity, and the Spi
       )}
 
 <div className="h-[400px] w-[90%] md:w-[500px] max-sm:mb-24 mx-auto flex flex-col gap-3 text-center items-center">
-        <div className="md:mt-24">
+        <div className="md:mt-0">
           <img
             className="h-[275px] w-[275px] mx-auto cursor-pointer"
             src={president}
             alt="Old Pavilion"
             onClick={() => openModal(president)} // Open modal on click
           />
-          <p className="text-lg font-semibold mb-4">PRESIDENT</p>
+          <p className="text-lg font-semibold">PRESIDENT</p>
+          <p className="text-sm font-semibold mb-4">Mr Dave Walker</p>
           <p className="text-sm w-[330px] text-justify">
           It is an honor to have been part of Chelsfield Cricket Club for over 50 years, following the legacy of my family. From starting as a scorer to my debut in 1964 at Cudham, and playing over 650 matches, the journey has been unforgettable.
 

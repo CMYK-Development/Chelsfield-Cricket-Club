@@ -21,7 +21,7 @@ const UpdateAdmin = () => {
             try {
                 // console.log("id",id);
 
-                const response = await axios.get(`http://localhost:3000/api/v1/searchadmin/${id}`);
+                const response = await axios.get(`https://backend-chelsfield.ironstepsoftware.com/api/v1/searchadmin/${id}`);
                 // console.log('response', response.data);
 
                 if (response.status == 200) {
@@ -58,7 +58,7 @@ const UpdateAdmin = () => {
 
         try {
             // Send request to update the admin's details in the backend
-            const response = await axios.put(`http://localhost:3000/api/v1/updateAdmin/${id}`, {
+            const response = await axios.put(`https://backend-chelsfield.ironstepsoftware.com/api/v1/updateAdmin/${id}`, {
                 name: values.name,
                 email: values.email,
                 password: values.password,

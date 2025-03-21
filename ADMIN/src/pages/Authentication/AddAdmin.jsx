@@ -29,7 +29,7 @@ const AddAdmin = () => {
 
         try {
             // Send request to add admin to backend API
-            const response = await axios.post('http://localhost:3000/api/v1/addAdmin', {
+            const response = await axios.post('https://backend-chelsfield.ironstepsoftware.com/api/v1/addAdmin', {
                 name: values.name,
                 email: values.email,
                 password: values.password,

@@ -18,7 +18,7 @@ const SliderAddImages = () => {
     // useEffect(() => {
     //     const fetchImages = async () => {
     //         try {
-    //             const response = await axios.get('http://localhost:3000/api/v1/slider'); // Update the endpoint if needed
+    //             const response = await axios.get('https://backend-chelsfield.ironstepsoftware.com/api/v1/slider'); // Update the endpoint if needed
     //             console.log('Fetched images:', response.data);
     //             setImages(response.data); // Assuming response.data contains an array of images
     //         } catch (error) {
@@ -143,7 +143,7 @@ const SliderAddImages = () => {
             // Loop through each selected image and send a DELETE request
             await Promise.all(
                 selectedImages.map(async (img) => {
-                    await axios.delete(`http://localhost:3000/api/v1/slider/${img.id}`);
+                    await axios.delete(`https://backend-chelsfield.ironstepsoftware.com/api/v1/slider/${img.id}`);
                 })
             );
     
