@@ -32,6 +32,8 @@ const News = lazy(()=>import('./pages/News'))
 const Teams = lazy(() => import('./pages/Teams'));
 const GalleryPage = lazy(() => import('./pages/GalleryPage'));
 const History = lazy(() => import('./pages/History'));
+const AllStars = lazy(() => import('./pages/AllStars'))
+const Dynamos = lazy(() => import('./pages/Dynamos'))
 
 function App() {
   return (
@@ -62,6 +64,8 @@ function App() {
             <Route path='/join' element={<JoinUs />} />
             <Route path='/equality' element={<Equality />} />
             <Route path='/club-history' element={<History />} />
+            <Route path='/allstars' element={<AllStars />} />
+            <Route path='/dynamos' element={<Dynamos />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />

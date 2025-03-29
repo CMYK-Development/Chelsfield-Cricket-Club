@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import EqualOpportunity from "../assets/All Sections/Equal_opportunities.jpg";
 import junior from "../assets/All Sections/Junior_Players.jpg";
 import hallRoom from "../assets/hireHall/hallroom.jpg";
+import stars from "../assets/allstars1.jpg";
+import stars2 from "../assets/allstars2.jpg";
+import club from "../assets/Club.png";
+
+import ImageSlider from "./ImageSlider";
 
 const AboutClub = () => {
   const [isOpen, setIsOpen] = useState(false); // Track modal state
@@ -25,6 +30,30 @@ const AboutClub = () => {
     }
   };
 
+  const images = [
+    {
+      id: 1,
+      src: [stars],
+      alt: 'First Slide'
+    },
+    {
+      id: 2,
+      src: [stars2],
+      alt: 'Second Slide'
+    }
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Auto-change image every 10 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 10000); // 10 seconds
+
+    return () => clearInterval(interval); // cleanup
+  }, [images.length]);
+
   return (
     <div className="w-full bg-white pt-8">
       <div className="w-full bg-white pt-8">
@@ -35,6 +64,10 @@ const AboutClub = () => {
     <span>Kent’s Oldest Cricket Club,&nbsp;&nbsp;Established 1731 • Kent’s Oldest Cricket Club,&nbsp;&nbsp;Established 1731</span>
   </div>
 </div>
+
+
+<ImageSlider/>
+
 
     </div>
       <h1 className="text-2xl max-sm:text-lg uppercase font-semibold text-center pt-4 tracking-wider">

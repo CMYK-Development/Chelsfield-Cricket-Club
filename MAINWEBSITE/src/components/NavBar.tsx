@@ -106,7 +106,7 @@ const NavBar = () => {
 
          
       <div className="flex lg:flex-row flex-col items-end lg:items-center gap-8">
-      <div className="w-[92%] mx-auto flex items-center pt-3 justify-between ">
+      <div className="w-[95%] mx-auto flex items-center pt-3 justify-between ">
 
   
 
@@ -116,15 +116,33 @@ const NavBar = () => {
        <div className="flex gap-8 items-center text-black text-base max-sm:text-sm font-semibold">
          <Link
            to={"/"}
-           className={`text-sm hover:text-blue-500 transition-all duration-300 ${
+           className={`text-xs hover:text-blue-500 transition-all duration-300 ${
              location.pathname === "/" ? "text-blue-500" : ""
            }`}
          >
            Home
          </Link>
          <Link
+           to={"/allstars"}
+           className={`text-xs bg-gradient-to-r from-yellow-400 to-pink-500 bg-clip-text text-transparent
+ hover:text-blue-500 transition-all duration-300 ${
+             location.pathname === "/allstars" ? "bg-gradient-to-r from-yellow-400 to-pink-500 bg-clip-text text-transparent" : ""
+           }`}
+         >
+           All Stars
+         </Link>
+         <Link
+           to={"/dynamos"}
+           className={`text-xs bg-gradient-to-r from-pink-500 to-yellow-400 bg-clip-text text-transparent
+ hover:text-blue-500 transition-all duration-300 ${
+             location.pathname === "/dynamos" ? "bg-gradient-to-r from-pink-500 to-yellow-400 bg-clip-text text-transparent" : ""
+           }`}
+         >
+           Dynamos
+         </Link>
+         <Link
            to={"/about"}
-           className={`text-sm hover:text-blue-500 transition-all duration-300 text-nowrap ${
+           className={`text-xs hover:text-blue-500 transition-all duration-300 text-nowrap ${
              location.pathname === "/about" ? "text-blue-500" : ""
            }`}
          >
@@ -132,7 +150,7 @@ const NavBar = () => {
          </Link>
          <Link
            to={"/club-history"}
-           className={`text-sm hover:text-blue-500 transition-all duration-300 text-nowrap ${
+           className={`text-xs hover:text-blue-500 transition-all duration-300 text-nowrap ${
              location.pathname === "/club-history" ? "text-blue-500" : ""
            }`}
          >
@@ -140,7 +158,7 @@ const NavBar = () => {
          </Link>
          <Link
            to={"/gallery"}
-           className={`text-sm hover:text-blue-500 transition-all duration-300 text-nowrap ${
+           className={`text-xs hover:text-blue-500 transition-all duration-300 text-nowrap ${
              location.pathname === "/gallery" ? "text-blue-500" : ""
            }`}
          >
@@ -149,7 +167,7 @@ const NavBar = () => {
          {/* Teams Dropdown */}
          <div className="">
            <button
-             className={`text-sm hover:text-blue-500 transition-all duration-300 ${
+             className={`text-xs hover:text-blue-500 transition-all duration-300 ${
                location.pathname.includes("/teams") ? "text-blue-500" : ""
              }`}
              onClick={toggleDropdown}
@@ -222,7 +240,7 @@ const NavBar = () => {
         
          <Link
            to={"https://chelsfield.play-cricket.com/Matches"}
-           className={`text-sm hover:text-blue-500 transition-all duration-300 text-nowrap ${
+           className={`text-xs hover:text-blue-500 transition-all duration-300 text-nowrap ${
              location.pathname === "/fixtures" ? "text-blue-500" : ""
            }`}
          >
@@ -230,7 +248,7 @@ const NavBar = () => {
          </Link>
          <Link
            to={"https://chelsfield.play-cricket.com/Statistics"}
-           className={`text-sm hover:text-blue-500 transition-all duration-300 ${
+           className={`text-xs hover:text-blue-500 transition-all duration-300 ${
              location.pathname === "/stats" ? "text-blue-500" : ""
            }`}
          >
@@ -238,7 +256,7 @@ const NavBar = () => {
          </Link>
          <Link
            to={"https://youtube.com/@chelsfieldcc-en8ru?si=htRWSKscg54teiXC"}
-           className={`text-sm hover:text-blue-500 transition-all duration-300 ${
+           className={`text-xs hover:text-blue-500 transition-all duration-300 ${
              location.pathname === "/livestream" ? "text-blue-500" : ""
            }`}
          >
@@ -246,7 +264,7 @@ const NavBar = () => {
          </Link>
          <Link
            to={"/hall"}
-           className={`text-sm hover:text-blue-500 transition-all duration-300 text-nowrap ${
+           className={`text-xs hover:text-blue-500 transition-all duration-300 text-nowrap ${
              location.pathname === "/hall" ? "text-blue-500" : ""
            }`}
          >
@@ -254,7 +272,7 @@ const NavBar = () => {
          </Link>
          <Link
            to={"/touch"}
-           className={`text-sm hover:text-blue-500 transition-all duration-300 text-nowrap ${
+           className={`text-xs hover:text-blue-500 transition-all duration-300 text-nowrap ${
              location.pathname === "/touch" ? "text-blue-500" : ""
            }`}
          >
@@ -267,7 +285,7 @@ const NavBar = () => {
      {!phoneActive && (
       <Link
       to={"/join"}
-      className={`hover:opacity-80 rounded-md py-2 px-4 text-white flex items-center justify-center bg-blue-600 transition-all duration-300 text-nowrap ${
+      className={` text-sm hover:opacity-80 rounded-md py-2 px-4 text-white flex items-center justify-center bg-blue-600 transition-all duration-300 text-nowrap ${
         location.pathname === "/join" ? "text-blue-500" : ""
       }`}
     >
@@ -334,6 +352,16 @@ const NavBar = () => {
           <li>
             <Link to={"/"} onClick={() => setIsOpen(false)}>
               Home
+            </Link>
+          </li>
+          <li>
+            <Link to={"/allstars"} onClick={() => setIsOpen(false)} className="bg-gradient-to-r from-yellow-400 to-pink-500 bg-clip-text text-transparent">
+              All Stars
+            </Link>
+          </li>
+          <li>
+            <Link to={"/dynamos"} onClick={() => setIsOpen(false)} className="bg-gradient-to-r from-pink-500 to-yellow-400 bg-clip-text text-transparent">
+              Dynamos
             </Link>
           </li>
           <li>
